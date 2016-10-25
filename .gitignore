@@ -1,0 +1,8 @@
+#git temp files#
+*.swp
+
+#Class files#
+*.class
+
+#Package Files#
+*.jar
