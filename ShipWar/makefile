@@ -3,6 +3,8 @@
 #
 
 JFLAGS = -g
+JCDEST = -cp ../  
+JRCDEST = -cp ../ ShipWar/
 JC = javac
 JRC = java
 
@@ -32,7 +34,7 @@ JRC = java
 #
 
 .java.class:
-		$(JC) $(JFLAGS) $*.java
+		$(JC) $(JFLAGS) $(JCDEST)$*.java
 
 MAINCLASS = MainClass
 
@@ -43,6 +45,7 @@ MAINCLASS = MainClass
 CLASSES = \
         Drawable.java \
         FieldDrawer.java \
+		ShipDrawer.java \
 		Field.java	\
 		Game.java \
 		MainClass.java \
@@ -64,7 +67,7 @@ classes: $(CLASSES:.java=.class)
 
 compile : classes
 run: classes
-	$(JRC) $(MAINCLASS)
+	$(JRC) $(JRCDEST)$(MAINCLASS)
 
 
 #
